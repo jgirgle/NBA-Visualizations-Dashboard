@@ -4,7 +4,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 #SQL Use Tool
-engine = create_engine("sqlite:///static/data/mappingmambas.sqlite")
+engine = create_engine("sqlite:///mappingmambas.sqlite")
 
 #Reflect database into new model
  # Base = automap_base()
@@ -54,4 +54,4 @@ def bubblechart():
 
 #Define main behavior
 if __name__ == "__main__":
-    app.run(host="localhost", port=5000, debug=True)
+    app.run()
