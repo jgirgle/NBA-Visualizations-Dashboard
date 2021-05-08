@@ -1,0 +1,312 @@
+/* remove default margin and padding from body */
+/* img[src$="centerme"] {
+  display: block;
+  margin: 0 auto;
+} */
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* min-height: 100%; */
+    /* height: 100vh; */
+    background-color: #C9082A;
+  }
+
+html, body {
+    /* height: 100%; */
+    max-width: 100%;
+    overflow-x: hidden;
+    /* overflow: auto; */
+    /* overflow-y: initial; */
+  }
+
+  /* div#mastercontainer {
+    overflow:visible;  width: 100%;
+    height: 100%;
+    min-height: 100%;
+    } */
+
+/* #right {
+  height: 100%;
+} */
+
+/* div {
+  height: 100vh;
+  } */
+
+.col {
+    width: 100%;
+  }
+  
+/* Format Web Page Home*/
+.header{
+    /* background-color: #17408B; */
+    z-index:2;
+  }
+  
+/* Format Title "Titanic Passenger & Crew Analysis */
+.header a{
+    /* background: lightseagreen; */
+    font-family: Merienda;
+    font-size: 200%;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 14px 0px 20px 0px;
+    margin: 0px 0px 0px 30px;
+  }
+  
+
+  /* #kobe {
+    width: 36px;
+  } */
+  
+/* Format Navigation Bar Functions*/
+.menu{
+    background-color: #17408B;
+    z-index:2;
+  }
+  
+/* Format Nav Bar */
+.navbar{
+    padding-bottom:0;
+    padding-top:0;
+    margin-right: 5%;
+  }
+
+ /* Basketball Starts */
+.container{
+  top:0px;
+  background:#fff;
+  width:100%;
+  /* height:100%; */
+  position:absolute;
+  left:0%;
+  background: center top no-repeat;
+  padding: 0;
+}
+
+.basketballs {
+    text-align: center;
+}
+.basketballs span {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+	margin: -280px 40px 54px -34px;
+	background:url("../assets/basketball.png");
+    
+   -webkit-animation: basketballs 10s infinite  linear;
+   -moz-animation: basketballs 10s infinite  linear;
+}
+.basketballs span:nth-child(5n+5) {
+
+    -webkit-animation-delay: 1.3s;
+    -moz-animation-delay: 1.3s;
+}
+.basketballs span:nth-child(3n+2) {
+
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+}
+.basketballs span:nth-child(2n+5) {
+
+    -webkit-animation-delay: 1.7s;
+    -moz-animation-delay: 1.7s;
+}
+
+.basketballs span:nth-child(3n+10) {
+
+    -webkit-animation-delay: 2.7s;
+    -moz-animation-delay: 2.7s;
+}
+.basketballs span:nth-child(7n+2) {
+
+    -webkit-animation-delay: 3.5s;
+    -moz-animation-delay: 3.5s;
+}
+
+.basketballs span:nth-child(4n+5) {
+/* .basketballs span:nth-child(3n+2) { */
+
+    -webkit-animation-delay: 5.5s;
+    -moz-animation-delay: 5.5s;
+}
+.basketballs span:nth-child(3n+7) {
+
+    -webkit-animation-delay: 8s;
+    -moz-animation-delay: 8s;
+}
+@-webkit-keyframes basketballs {
+  0% {
+    opacity: 1;
+
+	-webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    opacity: 1;
+
+	-webkit-transform: translate(100px, 600px) rotateZ(270deg); 
+  }
+  100% {
+    opacity: 0;
+
+	-webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
+@-moz-keyframes basketballs {
+  0% {
+    opacity: 1;
+    
+	-webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    opacity: 1;
+   
+	-webkit-transform: translate(100px, 600px) rotateZ(270deg); 
+  }
+  100% {
+    opacity: 0;
+    
+	-webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
+/* Basketballs End */
+
+.container-fluid {
+    padding: 50;
+  }
+
+p {
+  color:white;
+  font-family: Book Antiqua;
+  text-align: center;
+}
+
+/* .map {
+  height: 80%;
+} */
+  .write {
+    font-family: Book Antiqua;
+    color: #17408B;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .write p{
+    color: #17408B;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .key {
+    margin-top: 60px;
+  }
+  /* h1 {
+    width: 100%;
+    border-bottom: 3px solid blue;
+    background-color: #17408B;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-family: Merienda;
+    font-family: Palatino Linotype;
+    font-family: 'Book Antiqua';
+  } */
+
+
+/* h1 a {
+  font-family: Raleigh Gothic;
+  color: black;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: center;
+  margin: 8px, 0px, 8px 0px;
+} */
+
+#map {
+  z-index: 0;
+}
+
+#bar-area {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-color: white;
+  font-family: Book Antiqua;
+}
+  /* set map, body, and html to 100% of the screen size */
+/* .row {
+    padding-left: 15px;
+    padding-right: 15px;
+  } */
+
+  .footer {
+    width: 100%;
+    position:relative;
+    bottom:0;
+    background-color: #17408B;
+    z-index:0;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    border-top: 3px solid #C9082A;
+    display:inline;
+    box-sizing:border-box;
+    padding: .75% 0;
+}
+
+/* Change the color in the stroke property of the image data */ 
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1.0%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }  
+
+/* Formats when screen is small */
+@media only screen and (max-width: 768px) {
+  .first-row {
+    background-color: #17408B;
+  }
+  .menu {
+      padding: 0;
+  }
+  .header a{
+      padding: 14px;
+      margin: 0px 0px 0px 0px;
+  }
+  .nav-item {
+      padding: 1.5%;
+  }
+  body {
+      background-color: #C9082A;
+  }
+  #small {
+      display: block;
+      margin-bottom:0;
+  }
+  #space {
+      display: none;
+  }
+  .navbar-light .navbar-toggler {
+      border-color: white;
+  }
+  .move {
+      margin-right: 1.5%
+  }
+}
+
+.dropdown-item:hover {
+  background-color: #C9082A;
+  color: white;
+}
+
+/* Format click color */
+.click:hover {
+  background-color: #C9082A;
+  color: white !important;
+}

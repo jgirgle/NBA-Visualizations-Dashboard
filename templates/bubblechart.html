@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NBA- Team Budget Bubble</title>
+
+        <!--Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+
+        <!-- Leaflet CSS -->
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
+
+        <!-- <script src="/js/leaflet-0.7.2/leaflet.ajax.min.js"></script> -->
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese" rel='stylesheet' type='text/css'>
+        <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+        <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+
+
+
+
+        <!-- API key -->
+        <script defer type="text/javascript" src="../static/js/config.js"></script>
+
+        <!-- Our JS -->
+        <script defer type="text/javascript" src="../static/js/map_logic.js"></script>
+        <script defer type="text/javascript" src="../static/js/map_app.js"></script>
+        <script defer type="text/javascript" src="../static/js/barchart_race.js"></script>
+        <script defer type="text/javascript" src="../static/js/bubblechart.js"></script>
+
+
+        <!-- Our CSS -->
+        <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+        <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+
+        <!-- Normalize Style -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" /> -->
+  
+    </head>
+
+    <body>
+        <!--Start Header- Title & Menu Section-->
+        <div>
+
+            <!--Add Menu-->
+            <div class="col menubuttons menu">
+        
+                <!--Add Navigation Bar-->
+                <nav class="navbar navbar-expand-md navbar-light p-0">
+                    <div class="col d-flex flew-row p-0 first-row">
+                        <div class="header">
+                            <a href="/">NBA History in Visualizations <img id=kobe src="../static/assets/NBA Kobe.png"alt="NBA" width=5%></a>
+                
+                        </div>
+            
+                        <!--Create Drop Down Button in Navigation Bar-->
+                        <button class="navbar-toggler ml-auto align-self-center move" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!--Created Complete-->
+                    </div>
+                    <!--End Add-->
+            
+                    <!--Add Content to Navigation Bar-->
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    
+                        <!--Create Unorderd List for Navigation Bar-->
+                        <ul class="navbar-nav ml-auto">
+                
+                            <!--Create List for Navigation Bar Drop Down Button-->
+                            <li class="nav-item dropdown">
+                
+                                <!--Start Title Function of Drop Down Button-->
+                                <a class="nav-link dropdown-toggle click" style="color:white;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Visualizations
+                                </a>
+                                <!--End Title Function of Drop Down Button-->
+                    
+                                <!-- Connect hyperlink group for plot drop down button pptions-->
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="championships">Championship Race</a>
+                                    <a class="dropdown-item" href="bubblechart">Team Budget Bubble</a>
+                                </div>
+                                <!-- Finish hyperlink group of plot drop down button options-->
+                
+                            </li>
+                            <!--Finish List for Navigation Bar Drop Down Button-->
+                
+                            <!-- Create Comparison Item for Navigation Bar-->
+                            <!-- <li class="nav-item"> -->
+                
+                            <!--Connect hyperlink for Comparisond data-->
+                            <!-- <a class="nav-link click" href="WebDesign/Comparison.html">Comparison</a> -->
+                            <!--Finish hyperlink-->
+                
+                            <!-- </li> -->
+                            <!--End Comparison Item for Navigation Bar-->
+                
+                            <!--Create Data Item for Navigation Bar-->
+                            <!-- <li class="nav-item"> -->
+                
+                            <!--Connect hyperlink for Data data-->
+                            <!-- <a class="nav-link click" href="WebDesign/Data.html">Data</a> -->
+                            <!--Finish hyperlink-->
+                
+                            <!-- </li> -->
+                            <!--End Data Item for Navigation Bar -->
+            
+                        </ul>
+                        <!--Finish Unorderd List for Navigation Bar-->
+        
+                    </div>
+                    <!--End Content for Navigation Bar-->
+            
+                </nav>
+                <!--End Navigation Bar-->
+  
+            </div>
+            <!--End Menu-->
+        
+        </div>
+        <!--End Header- Title & Menu Section-->
+
+        <div class="container-fluid" >
+            <div id="page-holder">
+
+                <!-- <h1>
+
+                </a>NBA History in Visualizations</a>
+                <img id=kobe src="Team Logos/NBA Kobe.png"alt="NBA" width=5%>
+                
+                </h1> -->
+                <br>
+                <!-- <h4>An NBA map with historical information using Leaflet</h4>
+                <p>Champaionships, Plater Information, etc... can be found here!</p> -->
+                
+                <div class="row h-100" style="background-color:white;">
+                    <!-- <div id="bar-chart" class="row"> -->
+                    <div class="column col-sm-4 write">
+                        <div class="container-fluid" style="background-color:white;">
+                            <div class="row key">
+                                <div class="col-12">NBA Team Key:</div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-4"> ATL = <img src="../static/assets/Atlanta Hawks.png"alt="NBA" width=50%> <br></div>
+                                <div class="col-4"> BKN = <img src="../static/assets/Brooklyn Nets.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> BOS = <img src="../static/assets/Boston Celtics.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> CHA = <img src="../static/assets/Charlotte Hornets.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> CHI = <img src="../static/assets/Chicago Bulls.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> CLE = <img src="../static/assets/Cleveland Cavaliers.png"alt="NBA" width=40%> <br></div>
+                                <div class="col-4"> DAL = <img src="../static/assets/Dallas Mavericks.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> DEN = <img src="../static/assets/Denver Nuggets.gif"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> DET = <img src="../static/assets/Detroit Pistons.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> GSW = <img src="../static/assets/Golden State Warriors.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> HOU = <img src="../static/assets/Houston Rockets.png"alt="NBA" width=40%> <br></div>
+                                <div class="col-4"> IND = <img src="../static/assets/Indiana Pacers.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> LAC = <img src="../static/assets/LA Clippers.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> LAL = <img src="../static/assets/LA Lakers.png"alt="NBA" width=40%> <br></div>
+                                <div class="col-4"> MEM = <img src="../static/assets/Memphis Grizzlies.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> MIA = <img src="../static/assets/Miami Heat.png"alt="NBA" width=25%> <br></div>
+                                <div class="col-4"> MIL = <img src="../static/assets/Milwaukee Bucks.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> MIN = <img src="../static/assets/Minnesota Timberwolves.gif"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> NOP = <img src="../static/assets/New Orleans Pelicans.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> NYK = <img src="../static/assets/New York Knicks.png"alt="NBA" width=35%><br></div>
+                                <div class="col-4"> OKC = <img src="../static/assets/Oklahoma City Thunder.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> ORL = <img src="../static/assets/Orlando Magic.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> PHI = <img src="../static/assets/Philadelphia 76ers.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> PHX = <img src="../static/assets/Phoenix Suns.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> POR = <img src="../static/assets/Portland Trail Blazers.png"alt="NBA" width=30%> <br></div>
+                                <div class="col-4"> SAC = <img src="../static/assets/Sacramento Kings.gif"alt="NBA" width=25%> <br></div>
+                                <div class="col-4"> SAS = <img src="../static/assets/San Antonio Spurs.gif"alt="NBA" width=45%> <br></div>
+                                <div class="col-4"> TOR = <img src="../static/assets/Toronto Raptors.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> UTA = <img src="../static/assets/Utah Jazz.png"alt="NBA" width=35%> <br></div>
+                                <div class="col-4"> WAS = <img src="../static/assets/Washington Wizards.png"alt="NBA" width=35%> <br></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bubbleChart"></div>
+                    <style>
+                        .bubbleChart {
+                        min-width: 100px;
+                        max-width: 700px;
+                        height: 700px;
+                        margin: 0 auto;
+                        }
+                        .bubbleChart svg{
+                        /* background: #17408B; */
+                        background: white;
+                        }
+                    </style>
+                
+                    <!-- <div class="container">
+                        <button id="button1">Animate Again </button><br />
+                        <canvas id="myChart"></canvas> -->
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+            <br>
+        
+          <!-- <div class="col-sm-2" style="background-color:#c90c0c;">NBA History
+          </div> -->
+
+            <!--           
+          <div class="col" id="map-holder" style="background-color:#C9082A;">
+            <div id="map"> </div>
+          </div> -->
+
+
+          <!-- <div class="col-sm-2" style="background-color:#0502be;">Data Available -->
+          <!-- <div class="col-sm-2 write" style="background-color:blueviolet;">Data Available
+            <p>With our data...</p> -->
+         
+        </div>
+
+        <br>
+        <!-- Start of Footer -->
+        <div>
+            <div class="row">
+                <a href="https://github.com/jgirgle/Mapping-Mambas" class= "col col-12 footer">© Copyright Mapping Mambas 2021</a>
+            </div>
+        </div> 
+        <!-- End of Footer -->
+
+    </body>
+</html>
